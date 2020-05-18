@@ -2733,8 +2733,8 @@ function getPokestopMarkerIcon(pokestop, ts) {
         icon = L.icon({
             iconUrl: '/static/img/quest/'+invasionString+lureId+itypeString+'_'+rewardString+'.png',
             iconSize: 		[size       , size * 1.667  ],
-            iconAnchor: 	[size / 2   , size * 1.567  ],
-            popupAnchor: 	[0          , size * -1.567 ]
+            iconAnchor: 	[size / 2   , size * 1.2 ],
+            popupAnchor: 	[0          , size * -1.367 ]
         });
     } else {
         let lureId;
@@ -2837,7 +2837,7 @@ function getPokestopMarkerIcon(pokestop, ts) {
             iconUrl: '/static/img/pokestop/'+invasionString+lureId+itypeString+'.png',
             iconSize: 		[size       , size /** 1.667*/  ],
             iconAnchor: 	[size / 2   , size / 2 ],
-            popupAnchor: 	[0          , -(size/1.4) ]
+            popupAnchor: 	[0          , -(size/2) ]
         });
     }
 	return icon;
