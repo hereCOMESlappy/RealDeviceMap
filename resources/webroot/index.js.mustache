@@ -78,6 +78,8 @@ let tileLayer;
 
 let pokemonDb = {};
 
+let lapspecFEversion = "v2.0.0.0";
+
 $(function() {
 
     L.Marker.addInitHook(function() {
@@ -157,7 +159,8 @@ $(function() {
 
     avilableItems = JSON.parse('{{{avilable_items_json}}}');
     avilableTileservers = JSON.parse('{{{avilable_tileservers_json}}}');
-    console.log('Available Forms: '+avilableForms);
+    //console.log('Available Forms: '+avilableForms);
+    console.log('LapSkittyspec Front End Version: '+lapspecFEversion);
     
     loadStorage();
 
@@ -2833,7 +2836,7 @@ function getPokestopMarkerIcon(pokestop, ts) {
         icon = L.icon({
             iconUrl: '/static/img/pokestop/'+invasionString+lureId+itypeString+'.png',
             iconSize: 		[size       , size /** 1.667*/  ],
-            iconAnchor: 	[size / 2   , size /** 1.567*/  ],
+            iconAnchor: 	[size / 2   , size / 2 ],
             popupAnchor: 	[0          , -(size/1.4) ]
         });
     }
