@@ -465,7 +465,7 @@ function loadStorage() {
             defaultRaidFilter["timers"] = {"show": false, "size": "normal"};
         }
         let i;
-        for (i = 1; i <= 5; i++) {
+        for (i = 1; i <= 6; i++) {
             if (defaultRaidFilter["l" + i] === undefined) {
                 defaultRaidFilter["l" + i] = {"show": true, "size": "normal"};
             }
@@ -488,7 +488,7 @@ function loadStorage() {
             showRaidTimers = raidFilter["timers"]["show"];
         }
         let i;
-        for (i = 1; i <= 5; i++) {
+        for (i = 1; i <= 6; i++) {
             if (raidFilter["l" + i] === undefined) {
                 raidFilter["l" + i] = {"show": true, "size": "normal"};
             }
@@ -698,7 +698,7 @@ function initMap() {
         const defaultRaidFilter = {};
         defaultRaidFilter["timers"] = {"show": false, "size": "normal"};
         let i;
-        for (i = 1; i <= 5; i++) {
+        for (i = 1; i <= 6; i++) {
             defaultRaidFilter["l" + i] = {"show": true, "size": "normal"};
         }
         for (i = 1; i <= {{max_pokemon_id}}; i++) {
@@ -715,7 +715,7 @@ function initMap() {
         const defaultRaidFilter = {};
         defaultRaidFilter["timers"] = {"show": false, "size": raidFilterNew["timers"]["size"]};
         let i;
-        for (i = 1; i <= 5; i++) {
+        for (i = 1; i <= 6; i++) {
             defaultRaidFilter["l" + i] = {"show": false, "size": raidFilterNew["l" + i]["size"]};
         }
         for (i = 1; i <= {{max_pokemon_id}}; i++) {
@@ -1208,7 +1208,7 @@ function loadData() {
             raidFilterExclude.push("timers");
         }
         let i;
-        for (i = 1; i <= 5; i++) {
+        for (i = 1; i <= 6; i++) {
             if (raidFilter["l" + i]["show"] === false) {
                 raidFilterExclude.push("l" + i);
             }
@@ -1346,6 +1346,7 @@ function loadData() {
 							oldGym.raid_pokemon_id = gym.raid_pokemon_id;
                             oldGym.raid_pokemon_form = gym.raid_pokemon_form;
                             oldGym.raid_pokemon_cp = gym.raid_pokemon_cp;
+                            oldGym.raid_pokemon_evolution = gym.raid_pokemon_evolution;
                             oldGym.raid_pokemon_move_1 = gym.raid_pokemon_move_1;
                             oldGym.raid_pokemon_move_2 = gym.raid_pokemon_move_2;
 							oldGym.raid_level = gym.raid_level;
@@ -2166,7 +2167,11 @@ function getGymPopupContent(gym) {
             }
         }
 	if(isRaid)
-	{
+        {
+            if(gym.raid_level === 6)
+            {
+                content+= '</br><b>Mega Evolution</b>';
+            }
 	    content+='</div>'
 	}
 
